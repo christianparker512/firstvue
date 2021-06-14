@@ -3,33 +3,56 @@ const app = Vue.createApp({
     return {
       counter: 0,
       name: '',
-      fullname: ''
+      lastName: '',
+      // fullname: ''
     };
   },
   watch: {
-    name(value) {
-      if (value === '') {
-        this.fullname = '';
-      } else {
-        this.fullname = value + " " + 'Parker';
+    counter(){
+      if (value > 50){
+        const that = this;
+        setTimeout(function(){
+          that.counter =0;
+        }, 2000);
       }
     },
-  },
-  computed: {
-    // fullname(){
-    //   console.log('Running again...');
-    //   if(this.name ===''){
-    //     return '';
+    // name(value) {
+    //   if (value === '') {
+    //     this.fullname = '';
+    //   } else {
+    //     this.fullname = value + " " + 'Parker';
     //   }
-    //   return this.name + ' ' + 'Parker';
     // },
   },
+  computed: {
+    fullname(){
+      console.log('Running again...');
+      if(this.name ===''|| this.lastName ==''){
+        return '';
+      }
+      return this.name + ' ' + this.lastName;
+    },
+  },
   methods: {
+    naame(value) {
+      if(value === ''){
+        this.fullname = '';
+      } else{
+        this.fullname=value + ' '+ this.lastName;
+      }
+    },
+    lastName(value){
+      if (value ===''){
+        this.fullname = "";
+      } else {
+        this.fullname=value + ' '+  value;
+      }
+    },
     outputFullname(){
       if(this.name === ''){
         return '';
       }
-      return this.name + ' ' + 'Parker'
+      return this.name + ' ' + 'Parker';
     },
     setName(event) {
       this.name = event.target.value;
