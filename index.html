@@ -18,11 +18,11 @@
 </header>
 <section id="events">
   <h2>Number of Tutorials</h2>
-  <button v-on:click="add(10)">Add 10</button>
-  <button v-on:click="reduce(5)">Subtract 5</button>
+  <button @click="add(10)">Add 10</button>
+  <button @click="reduce(5)">Subtract 5</button>
   <p>Result: {{ counter }}</p>
 <!--  Example of two way binding-->
-  <input type="text" v-model="name">
+  <input type="text" :vaule="..."v-model="name">
   <input type="text" v-model="lastName">
   <button v-on:click="resetInput">Reset Input</button>
   <p>Your Name: {{ fullname}}</p>
