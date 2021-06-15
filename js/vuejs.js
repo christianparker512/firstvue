@@ -6,15 +6,22 @@ const app = Vue.createApp({
       boxCSelected: false
     };
   },
+  computed: {
+  boxAClasses(){
+    return {active: this.boxASelected};
+  },
+},
   methods: {
-    bosSelected(box) {
+    boxSelected(box) {
       if (box === 'A') {
         this.boxASelected = !this.boxASelected;
       } else if (box === 'B') {
         this.boxBSelected = !this.boxBSelected;
       } else if (box === 'C') {
-        this.boxCSelected = !this.boxCSelected
+        this.boxCSelected = !this.boxCSelected;
       }
-    }
+      },
+    },
 });
+
 app.mount('#styling');
