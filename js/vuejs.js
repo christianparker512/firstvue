@@ -11,9 +11,9 @@ const app = Vue.createApp({
       if (box === 'A') {
         this.boxASelected = !this.boxASelected;
       } else if (box === 'B') {
-        this.boxBSelected = !this.boxASelected;
+        this.boxBSelected = !this.boxBSelected;
       } else if (box === 'C') {
-        this.boxCSelected = !this.boxASelected
+        this.boxCSelected = !this.boxCSelected
       }
     }
 });
